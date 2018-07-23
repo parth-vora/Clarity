@@ -10,13 +10,13 @@ jinja_current_directory = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class GoodbyeHandler(webapp2.RequestHandler):
+class HomeHandler(webapp2.RequestHandler):
     def get(self):
         template2 = jinja_current_directory.get_template(
-            'templates/goodbye.html')
+            'templates/test.html')
         self.response.write(template2.render())
 
 #the route mapping
 app = webapp2.WSGIApplication([
-
+('/', HomeHandler),
 ], debug=True)
