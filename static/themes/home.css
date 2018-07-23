@@ -1,0 +1,22 @@
+header {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+    font-family: Verdana;
+    color: LightBlue;
+    font-size: 40px;
+}
+
+
+
+.floatleft {
+    float:left;
+    width: 80%;
+    height: 400px;
+}
+
+.floatright {
+float: right;
+    height: 400px;
+    width: 20%;
+}
