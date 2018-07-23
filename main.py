@@ -18,6 +18,8 @@ class HomeHandler(webapp2.RequestHandler):
     def post(self):
         answer=self.request.get("options")
         answer2=self.request.get("options2")
+        user_answer=QuizAnswer(self.answer=answer,self.answer2=answer2)
+        user_answer.put()
         template_vars={
             "option": answer,
             "option2": answer2,
@@ -28,7 +30,7 @@ class HomeHandler(webapp2.RequestHandler):
 class QuizAnswer(ndb.Model):
      answer=nbd.IntegerProperty()
      answer2=nbd.IntegerProperty()
-     
+
 
 app = webapp2.WSGIApplication([
 ('/', HomeHandler),
