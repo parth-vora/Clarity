@@ -1,23 +1,15 @@
-
-var form = FormApp.create('New Form');
-var item = form.addCheckboxItem();
-item.setTitle('What condiments would you like on your hot dog?');
-item.setChoices([
-        item.createChoice('Ketchup'),
-        item.createChoice('Mustard'),
-        item.createChoice('Relish')
-    ]);
-form.addMultipleChoiceItem()
-    .setTitle('Do you prefer cats or dogs?')
-    .setChoiceValues(['Cats','Dogs'])
-    .showOtherOption(true);
-form.addPageBreakItem()
-    .setTitle('Getting to know you');
-form.addDateItem()
-    .setTitle('When were you born?');
-form.addGridItem()
-    .setTitle('Rate your interests')
-    .setRows(['Cars', 'Computers', 'Celebrities'])
-    .setColumns(['Boring', 'So-so', 'Interesting']);
-Logger.log('Published URL: ' + form.getPublishedUrl());
-Logger.log('Editor URL: ' + form.getEditUrl());
+let num;
+let count=0;
+for(let i=0; i<5; i++){
+    num=parseInt(prompt("Enter a number from 1 to 5"))
+    console.log(num)
+    count+=num;
+    console.log(count)
+}
+if(count>=5&&count<=11){
+  console.log("Tuna")
+}else if(count<=12&&count>=18){
+  console.log("Fish")
+}else{
+  console.log("Animal")
+}
