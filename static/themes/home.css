@@ -130,6 +130,12 @@ h1,h2,h3,h4,h5,h6{
 .margin-top{
   margin-top:16px!important
 }
+.margin-left{
+  margin-left:16px!important
+}
+.margin-up{
+  margin:50px!important
+}
 
 .margin-right{
   margin-right:16px!important
@@ -404,4 +410,32 @@ input {
 .google_button {
   width: fit-content;
   border: 0;
+}
+
+#imggroup1{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+#imggroup2{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.image_fullwidth{
+  width: 100%;
+}
+
+.image_fullheight{
+  height: 100%;
+}
+.image_height{
+  height: 72.5%;
 }

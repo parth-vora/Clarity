@@ -10,15 +10,22 @@ jinja_current_directory = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class VideoHandler(webapp2.RequestHandler):
+    def get(self):
+        template6 = jinja_current_directory.get_template('/templates/videos.html')
+        self.response.write(template6.render())
+class QuizHandler(webapp2.RequestHandler):
+    def get(self):
+        template7 = jinja_current_directory.get_template('/templates/quizzes.html')
+        self.response.write(template7.render())
 class HomeHandler(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
         template2 = jinja_current_directory.get_template('/templates/home.html')
         template_vars = {'fortune': random.choice(inspiration)}
         self.response.write(template2.render(template_vars))
-=======
-        
-        template2 = jinja_current_directory.get_template('templates/test.html')
+class TestHandler(webapp2.RequestHandler):
+    def get(self):
+        template5 = jinja_current_directory.get_template('templates/test.html')
         question_list=[
         "I like to socialize with others",
         "I prefer hanging out instead of staying at home",
@@ -29,14 +36,12 @@ class HomeHandler(webapp2.RequestHandler):
         "I like to attend social events where I am involved in the festivities",
         "I feel as if I have a hard time making new friends",
         ]
-
         template_vars={
         "question_list":question_list,
         }
 
-        self.response.write(template2.render(template_vars))
+        self.response.write(template5.render(template_vars))
 
->>>>>>> 595116c8085111e47dd7f34c271f77d9f30f6642
     def post(self):
         count=1
         answer_list=[]
@@ -72,4 +77,7 @@ class QuizAnswer(ndb.Model):
 
 app = webapp2.WSGIApplication([
 ('/', HomeHandler),
+('/quizzes', QuizHandler),
+('/videos', VideoHandler),
+('/test',TestHandler)
 ], debug=True)
