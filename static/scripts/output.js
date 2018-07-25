@@ -12,7 +12,7 @@ if(int>=5&&int<=11){
 }else if(int>=12&&int<=18){
   div=document.createElement("div")
   text=document.createTextNode(listofoutputs[1])
-  document.appendChild(div)
+  body.appendChild(div)
   div.appendChild(text)
 }else{
   div=document.createElement("div")
