@@ -28,7 +28,7 @@ for(let i=0; i<7; i++){
   count++;
 }
 for(let i=0; i<8; i++){
-  question_title[i].innerHTML=get_questions[i].innerHTML;
+  question_title[i].innerHTML=get_questions[i].innerHTML+".";
 }
 body.removeChild(document.getElementById("list"));
 //changes the input name of all input tags in the question element
