@@ -1,70 +1,126 @@
+
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../static/themes/home.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-/* keeping just in case */
-/* .fa-anchor,.fa-coffee {font-size:200px} */
-</style>
+<head>
+  <title>Clarity</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/themes/home.css">
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+  .Bar,h1,button {font-family: "Montserrat", sans-serif}
+  </style>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="995518340486-k2h0qc1bjb4e2795s5chd24mt2v5n69b.apps.googleusercontent.com">
+</head>
 <body>
-<<<<<<< HEAD
-  
-=======
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="/quizzes">Quizzes</a>
+    <a href="/videos">Videos</a>
+  </div>
+<header class="Container red Center" style="padding:75px 16px">
 
->>>>>>> 817963c36a7028abf8d470a4340224339da7d06e
-<!-- Header -->
-<header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Clarity</h1>
-  <p class="w3-xlarge">A CSSI 2018 Invention bc we COOL</p>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+  <h1 class="margin jumbo_font">Clarity.</h1>
+  <p class="margin3 xlarge_font"> No matter who you are, you have to power to encourage others with a variety of esteem issues to feel uplifted and see the brighter side, even if that person is you.
+  </p>
+  <div class="flex-container">
+  <button class="g-signin2 red centered google_button" data-onsuccess="onSignIn"></button>
+</div>
 </header>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Quiizm</h1>
-      <h5 class="w3-padding-32">Quiz </h5>
 
-      <p class="w3-text-grey">Quizzes are fun. I am cool </p>
+<div class="Row_padding padding-64 Container">
+  <div class="Content">
+    <div class="Center_Width">
+    <div class="row">
+      <div class="column1"></div>
+      <div class="column2"></div>
     </div>
+    <h1 class="centered">Goals of Clarity</h1>
+    <p class="centered"> Approximately 1 in 5 adults in the U.S.(43.8 million) suffer from some form of mental illness. The goal of Clarity is to improve the mindset of our users. This is through quizzes and videos which help shed light on the truth about who you are. Press quizzes above and get started! </p>
 
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
-    </div>
-  </div>
-</div>
-
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
-    </div>
-
-    <div class="w3-twothird">
-      <h1>Cool Story!</h1>
-      <h5 class="w3-padding-32">This is Ellana. I am cool! woohoo!</h5>
-
-      <p class="w3-text-grey"> Hello, this is Parth. I am cool. woohoo! </p>
     </div>
   </div>
 </div>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Advice of the day: Be Happy, Be You! See the Clarity! </h1>
+<<div class="slideshow-container">
+
+  <div class="mySlides fade Center_Width centered">
+    <div class="numbertext" id= image>1 / 3</div>
+    <img src="/static/images/img1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade Center_Width centered">
+    <div class="numbertext" id= image>2 / 3</div>
+    <img src="/static/images/img2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade Center_Width centered">
+    <div class="numbertext" id= image>3 / 3</div>
+    <img src="/static/images/img3.jpg" style="width:100%">
+  </div>
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">
-  <div class="w3-xlarge w3-padding-32">
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+<br>
+
+<div class="Row_padding grey padding-64 Container">
+  <div class="Content">
+
+    <div class="Center_Width">
+      <div id="myDIV" class="header">
+      <h2>Feel Better Checklist</h2>
+      <p class="red"> Check off each of the following and add anything else you will do in order to show just how amazing you are!</p>
+      <input type="text" id="myInput" placeholder="I will...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+      <li class="checked"> Be Wonderful!</li>
+      <li>Take a deep breath, close my eyes, and visualize things working out.</li>
+      <li>Get in front of a mirror or your phone and smile.</li>
+      <li>Write down five things that I am proud of and stick the list in my wallet/purse to pull out to remind myself that I am awesome.</li>
+      <li>Call a friend and tell them I want to talk</li>
+      <li>Watch a silly pet video.</li>
+      <li>Stop comparing myself to others</li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div class="Container black Center Opacity padding-64">
+    <br>
+    <br>
+    <h1 class="margin xlarge_font">Advice of the Day:</h1>
+    <h1 class="margin xlarge_font">{{fortune}}</h1>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+<footer class="Container red padding-32 Center Opacity">
+  <div class="large_font padding-32">Created in CSSI 2018 NYC by Parth Vora, Ellana Lawrence, and Tyra Edgehill-Parker
     </footer>
-
+<script src="/static/scripts/home2.js"> </script>
+<script src="/static/scripts/home.js"> </script>
+<script type="text/javascript">function add_chatinline(){var hccid=94021619;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
 </body>
 </html>

@@ -10,9 +10,28 @@ jinja_current_directory = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+<<<<<<< HEAD
 class InsecuritiesHandler(webapp2.RequestHandler):
     def get(self):
         template2 = jinja_current_directory.get_template('templates/test.html')
+=======
+class VideoHandler(webapp2.RequestHandler):
+    def get(self):
+        template6 = jinja_current_directory.get_template('/templates/videos.html')
+        self.response.write(template6.render())
+class QuizHandler(webapp2.RequestHandler):
+    def get(self):
+        template7 = jinja_current_directory.get_template('/templates/quizzes.html')
+        self.response.write(template7.render())
+class HomeHandler(webapp2.RequestHandler):
+    def get(self):
+        template2 = jinja_current_directory.get_template('/templates/home.html')
+        template_vars = {'fortune': random.choice(inspiration)}
+        self.response.write(template2.render(template_vars))
+class TestHandler(webapp2.RequestHandler):
+    def get(self):
+        template5 = jinja_current_directory.get_template('templates/test.html')
+>>>>>>> 3e3c9741f4292ac1f9e81be4041aacd604baf6e0
         question_list=[
         "I like to socialize with others",
         "I prefer hanging out instead of staying at home",
@@ -23,14 +42,17 @@ class InsecuritiesHandler(webapp2.RequestHandler):
         "I like to attend social events where I am involved in the festivities",
         "I feel as if I have a hard time making new friends",
         ]
+<<<<<<< HEAD
         title="Insecurities"
         #Beginning
+=======
+>>>>>>> 3e3c9741f4292ac1f9e81be4041aacd604baf6e0
         template_vars={
         "question_list":question_list,
         "title":title
         }
 
-        self.response.write(template2.render(template_vars))
+        self.response.write(template5.render(template_vars))
 
     def post(self):
         count=1
@@ -103,6 +125,7 @@ class MinoritiesHandler(webapp2.RequestHandler):
         template = jinja_current_directory.get_template('templates/test_output.html')
         self.response.write(template.render(template_vars))
 
+<<<<<<< HEAD
 class AcademicHandler(webapp2.RequestHandler):
     def get(self):
         template2 = jinja_current_directory.get_template('templates/test.html')
@@ -242,15 +265,26 @@ class BodyHandler(webapp2.RequestHandler):
         }
         template = jinja_current_directory.get_template('templates/test_output.html')
         self.response.write(template.render(template_vars))
+=======
+inspiration = ['Be Happy, Be You! See the Clarity!', 'Failure will never overtake me if my determination to succeed is strong enough -Og Mandino', 'Life is 10 percent what happens to you and 90 percent how you react to it -Charles Swindoll', 'You  miss 100 percent of the shots you dont take - Wayne Gretsky', 'Problems are not stop signs, they are guidelines', 'Aim for the moon. If you miss, you may hit a star -W. Clement Stone','Only I can change my life. No one can do it for me. -Carol Burnett','If opportunity doesnt knock, build a door - Milton Berle','Tough times never last, but tough people do - Robert H. Schuller','Everyday may not be good but there is something good in everyday. -Alice Morse Earle']
+print(random.choice(inspiration))
+>>>>>>> 3e3c9741f4292ac1f9e81be4041aacd604baf6e0
 
 class QuizAnswer(ndb.Model):
     answer=ndb.IntegerProperty()
     total=ndb.IntegerProperty()
 
 app = webapp2.WSGIApplication([
+<<<<<<< HEAD
 ('/', InsecuritiesHandler),
 ('/minority', MinoritiesHandler),
 ('/academic', AcademicHandler),
 ('/imposter', ImposterHandler),
 ('/body', BodyHandler),
+=======
+('/', HomeHandler),
+('/quizzes', QuizHandler),
+('/videos', VideoHandler),
+('/test',TestHandler)
+>>>>>>> 3e3c9741f4292ac1f9e81be4041aacd604baf6e0
 ], debug=True)
