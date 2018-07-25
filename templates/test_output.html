@@ -2,7 +2,9 @@
 <head>
 </head>
 <body>
-  <div>{{option}}</div>
-  <div>{{option2}}</div>
+  {%for answer in answer_list%}
+    {{answer}}
+  {%endfor%}
+  {{total}}
 </body>
 </html>

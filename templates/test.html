@@ -3,23 +3,19 @@
 </head>
 <body>
   <div>Minority</div>
-  <form method= "post">
-    <div class="textbox">
-      Question 1:
-      <input  type="radio" name="options" value=1>1
-      <input  type="radio" name="options" value=2>2
-      <input  type="radio" name="options" value=3>3
-      <input  type="radio" name="options" value=4>4
-      <input  type="radio" name="options" value=5>5
-      <br>
-      Question 2:
-      <input  type="radio" name="options2" value=1>1
-      <input  type="radio" name="options2" value=2>2
-      <input  type="radio" name="options2" value=3>3
-      <input  type="radio" name="options2" value=4>4
-      <input  type="radio" name="options2" value=5>5
+  <form method= "post" id="quiz">
+    <div id="all_questions">
+      <div id="question1">
+        <div id="question_title">Question:</div>
+        <input  type="radio" name="q1" value=1>1
+        <input  type="radio" name="q1" value=2>2
+        <input  type="radio" name="q1" value=3>3
+        <input  type="radio" name="q1" value=4>4
+        <input  type="radio" name="q1" value=5>5
+        <br>
+      </div>
     </div>
-    <button type="submit" onclick="window.location.href='/'">Be Positive!</button>
+    <button type="submit" id="submit_button">Be Positive!</button>
   </form>
   <script src="../static/scripts/home.js"></script>
 </body>
