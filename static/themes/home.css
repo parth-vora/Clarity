@@ -51,7 +51,15 @@ h1,h2,h3,h4,h5,h6{
     margin-right: auto;
     width: 50%;
     text-align: center;
+    float:center;
 }
+.right{
+    display: block;
+    margin-left:25%;
+    margin-right: 75%;
+    width: 50%;
+    text-align: center;
+  }
 .Bar{
   display:inline-block;
   width:auto
@@ -382,3 +390,11 @@ input {
     background-color: grey;
     color: white;
 }
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
