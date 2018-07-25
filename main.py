@@ -38,6 +38,17 @@ class HomeHandler(webapp2.RequestHandler):
         template = jinja_current_directory.get_template('templates/test_output.html')
         self.response.write(template.render(template_vars))
 
+class QuizHandler(webapp2.RequestHandler):
+    def get(self):
+        template3= jinja_current_directory.get_template('/templates/quizzes.html')
+        self.response.write(template3.render())
+
+
+class VideoHandler(webapp2.RequestHandler):
+    def get(self):
+        template4= jinja_current_directory.get_template('/templates/videos.html')
+        self.response.write(template4.render())
+
 inspiration = ['Be Happy, Be You! See the Clarity!', 'Failure will never overtake me if my determination to succeed is strong enough -Og Mandino', 'Life is 10% what happens to you and 90% hpow you react to it -Charles Swindoll', 'You  miss 100 percent of the shots you dont take - Wayne Gretsky', 'Problems are not stop signs, they are guidelines', 'Aim for the moon. If you miss, you may hit a star -W. Clement Stone','Only I can change my life. No one can do it for me. -Carol Burnett','If opportunity doesnt knock, build a door - Milton Berle','Tough times never last, but tough people do - Robert H. Schuller','Everyday may not be good but there is something good in everyday. -Alice Morse Earle']
 print(random.choice(inspiration))
 
@@ -48,4 +59,6 @@ class QuizAnswer(ndb.Model):
 
 app = webapp2.WSGIApplication([
 ('/', HomeHandler),
+('/quizzes', QuizHandler),
+('/videos', VideoHandler)
 ], debug=True)
