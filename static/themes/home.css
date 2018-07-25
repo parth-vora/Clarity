@@ -7,21 +7,6 @@ html{
 body{
   margin:0
 }
-<<<<<<< HEAD
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 15%;
-    font-family: Verdana, Times, serif;
-    font-size: 20px;
-    background-color: #008B8B;
-    height: 25%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
-}
-=======
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
 html,body{
   font-family:Verdana,sans-serif;
   font-size:15px;
@@ -60,9 +45,6 @@ h1,h2,h3,h4,h5,h6{
   width:100%;
   overflow:hidden
 }
-<<<<<<< HEAD
-.Center
-=======
 .centered{
     display: block;
     margin-left: auto;
@@ -78,7 +60,6 @@ h1,h2,h3,h4,h5,h6{
     width: 50%;
     text-align: center;
   }
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
 .Bar{
   display:inline-block;
   width:auto
@@ -101,44 +82,20 @@ h1,h2,h3,h4,h5,h6{
 }
 .Bar
 */
-<<<<<<< HEAD
-.Left_Center_Width,
-.Center_Width{
-  float:left;
-  width:100%
-}
-.Center_Width{
-  width:66.66666%
-}
-.Content{
-  max-width:90%;
-=======
 
 
 .Content{
   max-width:100%;
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
   margin:auto
 }
 
 .Content2{
-<<<<<<< HEAD
-  max-width:70%;
-=======
   max-width:100%;
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
 }
 .Row_padding,
 .Row_padding>
 .Left_Center_Width,
 .Row_padding>
-<<<<<<< HEAD
-.Center_Width,
-{
-  padding:0 8px
-}
-=======
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
 .Container{
   padding:0.01em 16px
 }
@@ -219,10 +176,6 @@ h1,h2,h3,h4,h5,h6{
   color:#757575!important
 }
 
-<<<<<<< HEAD
-
-
-=======
 * {box-sizing:border-box}
 
 .slideshow-container {
@@ -410,7 +363,6 @@ input {
 .addBtn:hover {
     background-color: #bbb;
 }
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
@@ -438,8 +390,6 @@ input {
     background-color: grey;
     color: white;
 }
-<<<<<<< HEAD
-=======
 
 .flex-container {
   padding: 0;
@@ -448,4 +398,10 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
->>>>>>> 16c32a9778a2ef8bf55e68834aac27fb42e3b67b
+
+
+}
+.google_button {
+  width: fit-content;
+  border: 0;
+}
