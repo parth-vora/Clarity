@@ -398,6 +398,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+
+
 }
 .google_button {
   width: fit-content;
