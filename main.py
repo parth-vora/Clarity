@@ -224,21 +224,26 @@ class BodyHandler(webapp2.RequestHandler):
         "I compare myself to others",
         "I tend to focus more on how much more progress I need to make rather than the progress I have already made",
         ]
-
-
+        points=0
+        user=User(points=0)
+        user.put()
         title="Body Consciousness"
         #Beginning
         template_vars={
         "question_list":question_list1,
-        "title":title
+        "title":title,
+        "points": user.points,
         }
         self.response.write(template2.render(template_vars))
     def post(self):
         count=1
         answer_list=[]
         total=0
+        #user.points=12
         #assigns all questions to a variable and puts then in a list
         print(self.request)
+        points=int(self.request.get("points"))
+        points+=100
         for i in range(8):
             answer=int(self.request.get("q"+str(count)))
             total+=answer
@@ -254,6 +259,7 @@ class BodyHandler(webapp2.RequestHandler):
         template_vars={
         "answer_list": answer_list,
         "total":total,
+        "points":pointss
         }
         template = jinja_current_directory.get_template('templates/test_output.html')
         self.response.write(template.render(template_vars))
@@ -263,7 +269,9 @@ print(random.choice(inspiration))
 class QuizAnswer(ndb.Model):
     answer=ndb.IntegerProperty()
     total=ndb.IntegerProperty()
-
+class User(ndb.Model):
+    #username
+    points=ndb.IntegerProperty()
 app = webapp2.WSGIApplication([
 ('/insecurities', InsecuritiesHandler),
 ('/minority', MinoritiesHandler),
