@@ -5,6 +5,11 @@
   {%for answer in answer_list%}
     {{answer}}
   {%endfor%}<br>
+  <div id="all_outputs">
+    {%for output in outputs%}
+      <div class="output">{{output}}</div><br>
+    {%endfor%}
+  </div>
   <div id="total">{{total}}<div>
     <script src="../static/scripts/output.js"></script>
 </body>

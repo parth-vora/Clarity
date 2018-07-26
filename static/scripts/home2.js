@@ -8,9 +8,6 @@
     let get_questions=document.getElementsByClassName("question");
     let question_title=document.getElementsByClassName("question_title")
     let body=document.getElementsByTagName("body")[0];
-    for(let i=0;i<get_questions.length;i++){
-      console.log(get_questions[i].innerHTML);
-    }
     //let question_list=get_questions.split("\n");
     //console.log(question_list);
 
@@ -27,6 +24,7 @@
       all_questions.appendChild(new_question);
       count++;
     }
+
     for(let i=0; i<8; i++){
       question_title[i].innerHTML=get_questions[i].innerHTML;
     }

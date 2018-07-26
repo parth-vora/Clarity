@@ -26,17 +26,17 @@ class HomeHandler(webapp2.RequestHandler):
         template2 = jinja_current_directory.get_template('/templates/home.html')
         template_vars = {'fortune': random.choice(inspiration)}
         self.response.write(template2.render(template_vars))
-class TestHandler(webapp2.RequestHandler):
+class IntrovertHandler(webapp2.RequestHandler):
     def get(self):
         template5 = jinja_current_directory.get_template('templates/test.html')
         question_list=[
-        "I like to socialize with others",
-        "I prefer hanging out instead of staying at home",
+        "I don't like to socialize with others",
+        "I prefer staying at home instead of hanging out",
         "I have more fun when I'm alone",
         "I do not share my thoughts",
         "I like to stand away from the center of attention",
         "I tend to keep to myself in parties",
-        "I like to attend social events where I am involved in the festivities",
+        "I feel obligated to speak at social events",
         "I feel as if I have a hard time making new friends",
         ]
         title="Insecurities"
@@ -53,7 +53,6 @@ class TestHandler(webapp2.RequestHandler):
         answer_list=[]
         total=0
         #assigns all questions to a variable and puts then in a list
-        print(self.request)
         for i in range(8):
             answer=int(self.request.get("q"+str(count)))
 
@@ -63,13 +62,18 @@ class TestHandler(webapp2.RequestHandler):
          #puts all questions into the database
         for i in range(8):
             index=answer_list[i]
-            print index
             user_answer=QuizAnswer(answer=index, total=total)
             user_answer.put()
         #End
+        outputs=[
+        "You are an extrovert! You are able to meet others and should not be afraid to share your thoughts. If anyone says something else, remember that just because they are entitled to their own opinions, it doesn't mean that it is true! You're great and keep being you!",
+        "You are doing great! You don't have to be an extrovert to have fun. Introverts are proven to have higher levels of cognitive ability. Be proud of who you are!",
+        "Do not even stress about it! You are a wonderful person no matter what others might say. Just because you aren't in the center of attention, doesn't mean anything. People will be glad to meet you and get to know you! Keep on going strong! you are going places!"
+        ]
         template_vars={
             "answer_list": answer_list,
             "total":total,
+            "outputs":outputs
         }
         template = jinja_current_directory.get_template('templates/test_output.html')
         self.response.write(template.render(template_vars))
@@ -80,12 +84,12 @@ class MinoritiesHandler(webapp2.RequestHandler):
         question_list1=[
         "I feel like I can't relate to other people",
         "My appearances always stand out amongst others",
-        "I am confident in myself",
+        "I am not confident in myself",
         "I feel like I am judged because of my appearance",
         "I feel misunderstood",
-        "I think being unique is a good thing",
+        "I think being unique is a bad thing",
         "I sometimes wish I looked differently",
-        "I am happy that I look differently than others",
+        "I am not happy that I look differently than others",
         ]
         title="Minorities"
         #Beginning
@@ -99,7 +103,6 @@ class MinoritiesHandler(webapp2.RequestHandler):
         answer_list=[]
         total=0
         #assigns all questions to a variable and puts then in a list
-        print(self.request)
         for i in range(8):
             answer=int(self.request.get("q"+str(count)))
             total+=answer
@@ -108,7 +111,6 @@ class MinoritiesHandler(webapp2.RequestHandler):
          #puts all questions into the database
         for i in range(8):
             index=answer_list[i]
-            print index
             user_answer=QuizAnswer(answer=index, total=total)
             user_answer.put()
         #End
@@ -145,7 +147,6 @@ class AcademicHandler(webapp2.RequestHandler):
         answer_list=[]
         total=0
         #assigns all questions to a variable and puts then in a list
-        print(self.request)
         for i in range(8):
             answer=int(self.request.get("q"+str(count)))
             total+=answer
@@ -154,7 +155,6 @@ class AcademicHandler(webapp2.RequestHandler):
          #puts all questions into the database
         for i in range(8):
             index=answer_list[i]
-            print index
             user_answer=QuizAnswer(answer=index, total=total)
             user_answer.put()
         #End
@@ -171,12 +171,12 @@ class ImposterHandler(webapp2.RequestHandler):
         question_list1=[
         "I feel I don't deserve to be at the positions that I am in",
         "I feel like people are going to think I'm not qualified",
-        "I am confident in myself",
-        "When I miss a mark that I set for myself, I think I am not cut out",
-        "",
-        "",
-        "",
-        "",
+        "I am not confident in myself",
+        "When I don't reach a goal that I set for myself, I think I am not cut out",
+        "I feel like people are going to realize I don't belong in the position that I am in",
+        "When I recieve praise for my work, I don't think I deserve it",
+        "I make excuses for why I was able to sucessfully do something",
+        "My work has to be perfect in order for me to show someone",
         ]
 
         title="Imposter Syndrome"
@@ -191,7 +191,6 @@ class ImposterHandler(webapp2.RequestHandler):
         answer_list=[]
         total=0
         #assigns all questions to a variable and puts then in a list
-        print(self.request)
         for i in range(8):
             answer=int(self.request.get("q"+str(count)))
             total+=answer
@@ -200,7 +199,6 @@ class ImposterHandler(webapp2.RequestHandler):
          #puts all questions into the database
         for i in range(8):
             index=answer_list[i]
-            print index
             user_answer=QuizAnswer(answer=index, total=total)
             user_answer.put()
         #End
@@ -215,7 +213,7 @@ class BodyHandler(webapp2.RequestHandler):
     def get(self):
         template2 = jinja_current_directory.get_template('templates/test.html')
         question_list1=[
-        "I sometimes am too hard on myself",
+        "I am too hard on myself",
         "I have an ideal image of myself that I strive to reach",
         "I feel like people judge me for the way that I look",
         "I think I should be more confident in myself",
@@ -241,9 +239,11 @@ class BodyHandler(webapp2.RequestHandler):
         total=0
         #user.points=12
         #assigns all questions to a variable and puts then in a list
-        print(self.request)
-        points=int(self.request.get("points"))
-        points+=100
+
+        points=self.request.get("points")
+
+        #print(points+"$")
+        #points+=100
         for i in range(8):
             answer=int(self.request.get("q"+str(count)))
             total+=answer
@@ -252,14 +252,14 @@ class BodyHandler(webapp2.RequestHandler):
          #puts all questions into the database
         for i in range(8):
             index=answer_list[i]
-            print index
             user_answer=QuizAnswer(answer=index, total=total)
             user_answer.put()
+
         #End
         template_vars={
         "answer_list": answer_list,
         "total":total,
-        "points":pointss
+        #"points":points
         }
         template = jinja_current_directory.get_template('templates/test_output.html')
         self.response.write(template.render(template_vars))
@@ -281,5 +281,5 @@ app = webapp2.WSGIApplication([
 ('/', HomeHandler),
 ('/quizzes', QuizHandler),
 ('/videos', VideoHandler),
-('/test',TestHandler)
+('/introvert',IntrovertHandler),
 ], debug=True)
